@@ -1,1 +1,3 @@
+Web Cache Poisoning: Web cache poisoning is an advanced technique whereby an attacker exploits the behavior of a web server and cache so that a harmful HTTP 
+response is served to other users.
 
