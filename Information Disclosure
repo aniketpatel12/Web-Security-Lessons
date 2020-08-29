@@ -1,1 +1,32 @@
+The following are some examples of high-level techniques and tools that you can use to help identify information disclosure vulnerabilities during testing.
 
+1. Fuzzing:
+
+-> try to find any interresting input parameter
+-> input random data (diff data types/try to enter unique data/craffted fuzzing strings)
+-> You can automate much of this process using tools such as Burp Intruder. This provides several benefits. Most notably, you can:
+
+    >> Add payload positions to parameters and use pre-built wordlists of fuzz strings to test a high volume of different inputs in quick succession.
+    >> Easily identify differences in responses by comparing HTTP status codes, response times, lengths, and so on.
+    >> Use grep matching rules to quickly identify occurrences of keywords, such as error, invalid, SELECT, SQL, and so on.
+    >> Apply grep extraction rules to extract and compare the content of interesting items within responses.
+
+2. Using Burp Scanner
+
+-> Using Burp's engagement tools:  Burp provides several engagement tools that you can use to find interesting information in the target website more easily. 
+   You can access the engagement tools from the context menu - just right-click on any HTTP message, Burp Proxy entry, or item in the site map and go to "Engagement tools".
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Some of the places where you can find some information...
+
+1. Check source-code, may be in the comment you can find somemthing interesting information/framework name/any hidden direcotory/
+2. Try to give different input then expected...and then check the error (Sometimees in the error you found vulnerable framework/SQL hint/any other info.)
+   (You might also discover that the website is using some kind of open-source framework. In this case, you can study the publicly available source code, which is an invaluable resource for constructing your own exploits)
+   
+3. Debugging data (Try to find out the debug page and try to get the acess so that you can find the session related info/secret_key)
